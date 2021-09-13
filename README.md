@@ -121,3 +121,18 @@ Django+uWSGI+Nginx. А также создадим Docker-образ для ра
 #### 3.1. Заметки по ходу выполнения
 
 ...
+
+### 4. Maintenance / Вспомогательные инструменты
+
+- [Лучшие практики по ведению проекта](https://github.com/elsewhencode/project-guidelines)
+- Система контроля версий - git
+  - [Git book](https://git-scm.com/book/ru/v2)
+  - [Git How To](https://githowto.com/ru)
+- Использование командной среды разработки, на примере:
+  - [GitHub Issues](https://guides.github.com/features/issues/)
+  - [GitHub Actions](https://docs.github.com/en/actions)
+  - [Github Project Boards](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
+- Статические анализаторы кода:
+  - [pylint](https://www.pylint.org)
+  - [eslint](https://eslint.org/)
+- Unit-тестирование
