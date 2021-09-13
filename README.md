@@ -82,12 +82,12 @@ Django-приложением для динамического контента
 
 1. https://www.djangoproject.com/start/ - внизу Intro to Django, хорошо позволит
 пройти по самым важным моментам и особенностям Django как MVC-приложения.
-2. Со взглада новичка быстро пробижимся по основам:
+2. Со взгляда новичка быстро пробежимся по основам:
    1. https://docs.djangoproject.com/en/3.2/intro/install/ - Установка
    2. https://docs.djangoproject.com/en/3.2/intro/tutorial01/ - "Hello, world!" приложение
    3. https://docs.djangoproject.com/en/3.2/ - документация сориентирует по
    остальным вопросам, по мере необходимости
-3. https://www.django-rest-framework.org/ - В конце, спроектируем REST-API и 
+3. https://www.django-rest-framework.org/ - В конце, спроектируем REST-API и
 задание на минимальном уровне.
 
 #### 1.1. Заметки по ходу выполнения
@@ -116,7 +116,7 @@ Django+uWSGI+Nginx. А также создадим Docker-образ для ра
 
 1. https://docs.docker.com/samples/django/
 2. https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/uwsgi/
-3. https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/ 
+3. https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 #### 3.1. Заметки по ходу выполнения
 
