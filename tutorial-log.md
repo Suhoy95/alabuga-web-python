@@ -165,3 +165,15 @@ python manage.py shell
 1. Создаем администратора: `python manage.py createsuperuser`
 2. Ставим `LANGUAGE_CODE` чтобы интерфейс админки был на нужно языке
 3. Правим [`polls/admin.py`](mysite/polls/admin.py), чтобы в админке появились наши модели.
+
+## 5. Работа с Представлениями
+
+Источник: https://docs.djangoproject.com/en/3.2/intro/tutorial03/
+
+1. Добавляем представления для Опосников в [polls/views.py](mysite/polls/views.py).
+2. Создаем шаблоны в `templates/polls`.
+3. Метод `render` - сокращение для поиска шаблона
+4. в `django.shortcuts` можно найти полезные сокращения/узнать как работает Django на уровне ниже.
+5. [Руководство по Шаблонам](https://docs.djangoproject.com/en/3.2/topics/templates/)
+6. Используем {% url %} тег, для автоматического генерирования ссылки - это позволит легче менять URL в будующем.
+7. Также, полезно определять `app_name` в `urls.py` для разграничивания Пространство имен ссылок.

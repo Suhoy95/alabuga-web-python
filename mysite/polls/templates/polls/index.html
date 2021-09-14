@@ -1,0 +1,18 @@
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li>
+            {% comment %} 
+            Данный способ не лучший - при изменении URL-карты возникнет
+            необходимость в множестве правок в шаблонах.
+            <a href="/polls/{{question.id}}/"> 
+            {% endcomment %}
+            <a href="{% url 'polls:detail' question.id %}">
+                {{question.question_text}}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p> У матросов нет вопросов</p>
+{% endif %}

@@ -99,7 +99,9 @@ Django-приложением для динамического контента
 5. [Django: settings.py](https://docs.djangoproject.com/en/3.2/topics/settings/)
 6. [URL dispatcher: urls.py](https://docs.djangoproject.com/en/3.2/topics/settings/)
    1. Устройство аргументов `path()`: `route` - URL-путь, `view` которое должно вызываться по этому пути, `kwargs` - дополнительные аргументы для View, `name=` - название пути, облегчает изменение ссылок в приложении.
-...
+7. [Related objects reference](https://docs.djangoproject.com/en/3.2/ref/models/relations/)
+8. [Database API reference](https://docs.djangoproject.com/en/3.2/topics/db/queries/)
+9. [Руководство по Шаблонам](https://docs.djangoproject.com/en/3.2/topics/templates/)
 
 ### 2. Frontend: ReactJS + Ant (Дедлайн - Среда 15.09)
 
