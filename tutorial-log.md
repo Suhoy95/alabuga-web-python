@@ -33,6 +33,7 @@ python
 # Либо,
 python -m django --version
 ```
+
 ## 2. Первое приложение
 
 source: https://docs.djangoproject.com/en/3.2/intro/tutorial01/
@@ -152,6 +153,7 @@ COMMIT;
 ```shell
 python manage.py shell
 ```
+
 - [Смотри](https://docs.djangoproject.com/en/3.2/intro/tutorial02/#playing-with-the-api)
 
 1. Полезно описывать метод `__str__` у моделей - данное представление также
@@ -186,3 +188,15 @@ python manage.py shell
 2. `request.POST` & `request.GET` - можно доставать параметры запроса напрямую из словарей.
 3. `reverse('[name]', args)` - генерация URL, аналогично {% url %}, но для Python-кода
 4. Полезно знать про [`F()` - для избегания гонок](https://docs.djangoproject.com/en/3.2/ref/models/expressions/#f-expressions)
+
+## 7. Оставшееся
+
+Оставшуюся часть Tutorial-а опустим:
+
+1. [Тестирование](https://docs.djangoproject.com/en/3.2/intro/tutorial05/)
+рассмотрим позже, при достаточности времени.
+2. [Статические файлы](https://docs.djangoproject.com/en/3.2/intro/tutorial06/) -
+Frontend часть может быть отдельным приложением, мы будем рассматривать другие 
+варианты решений.
+3. [Кастомизация админ-панели](https://docs.djangoproject.com/en/3.2/intro/tutorial07/)
+4. [Написание пере-используемых приложений](https://docs.djangoproject.com/en/3.2/intro/reusable-apps/) - полезно знать, при наличии опыта в написании нескольких проектов с пересекающейся функциональность.
