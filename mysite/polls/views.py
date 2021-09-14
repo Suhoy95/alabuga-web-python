@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.urls import reverse
 from django.db.models import F
+from django.views import generic
 
 from .models import Choice, Question
 
@@ -20,6 +21,15 @@ def index(request):
     # shortcut
     return render(request, 'polls/index.html', context)
 
+# Аналогично функции выше
+class IndexView(generic.ListView):
+    template_name = 'polls/index.html'
+    context_object_name = 'latest_question_list'
+
+    def get_queryset(self):
+        return Question.objects.order_by('-pub_date')[:5]
+
+
 def detail(request, question_id):
     # from django.http.response import Http404
     # ...
@@ -33,9 +43,21 @@ def detail(request, question_id):
     return render(request, 'polls/detail.html', {'question': question})
 
 
+# Аналогично функции выше
+class DetailView(generic.DeleteView):
+    model = Question
+    template_name = 'polls/detail.html'
+
+
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question': question})
+
+
+# Аналогично функции выше
+class ResultView(generic.DetailView):
+    model = Question
+    template_name = 'polls/results.html'
 
 
 def vote(request, question_id):
