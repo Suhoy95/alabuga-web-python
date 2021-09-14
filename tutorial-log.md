@@ -177,3 +177,12 @@ python manage.py shell
 5. [Руководство по Шаблонам](https://docs.djangoproject.com/en/3.2/topics/templates/)
 6. Используем {% url %} тег, для автоматического генерирования ссылки - это позволит легче менять URL в будующем.
 7. Также, полезно определять `app_name` в `urls.py` для разграничивания Пространство имен ссылок.
+
+## 6. Работа с формами
+
+Источник: https://docs.djangoproject.com/en/3.2/intro/tutorial04/
+
+1. `{% csrf_token %}` - защита формы от Cross Site Request Forgeries
+2. `request.POST` & `request.GET` - можно доставать параметры запроса напрямую из словарей.
+3. `reverse('[name]', args)` - генерация URL, аналогично {% url %}, но для Python-кода
+4. Полезно знать про [`F()` - для избегания гонок](https://docs.djangoproject.com/en/3.2/ref/models/expressions/#f-expressions)

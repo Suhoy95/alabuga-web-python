@@ -102,6 +102,7 @@ Django-приложением для динамического контента
 7. [Related objects reference](https://docs.djangoproject.com/en/3.2/ref/models/relations/)
 8. [Database API reference](https://docs.djangoproject.com/en/3.2/topics/db/queries/)
 9. [Руководство по Шаблонам](https://docs.djangoproject.com/en/3.2/topics/templates/)
+10. Полезно знать про [`F()` - для избегания гонок](https://docs.djangoproject.com/en/3.2/ref/models/expressions/#f-expressions)
 
 ### 2. Frontend: ReactJS + Ant (Дедлайн - Среда 15.09)
 
