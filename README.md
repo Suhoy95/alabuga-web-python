@@ -92,6 +92,13 @@ Django-приложением для динамического контента
 
 #### 1.1. Заметки по ходу выполнения
 
+1. [Заметки по Django Tutorial (Hello, world)](./tutorial-log.md)
+2. [Если вдруг не заработала комманда `django-admin`](https://docs.djangoproject.com/en/3.2/faq/troubleshooting/#troubleshooting-django-admin)
+3. [dgango-admin & manage.py](https://docs.djangoproject.com/en/3.2/ref/django-admin/)
+4. [Python-package](https://docs.python.org/3/tutorial/modules.html#tut-packages)
+5. [Django: settings.py](https://docs.djangoproject.com/en/3.2/topics/settings/)
+6. [URL dispatcher: urls.py](https://docs.djangoproject.com/en/3.2/topics/settings/)
+   1. Устройство аргументов `path()`: `route` - URL-путь, `view` которое должно вызываться по этому пути, `kwargs` - дополнительные аргументы для View, `name=` - название пути, облегчает изменение ссылок в приложении.
 ...
 
 ### 2. Frontend: ReactJS + Ant (Дедлайн - Среда 15.09)
@@ -119,6 +126,11 @@ Django+uWSGI+Nginx. А также создадим Docker-образ для ра
 3. https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 #### 3.1. Заметки по ходу выполнения
+
+1. Появилась асинхронная версия коннектора - ASGI. Интересно попробовать, 
+изучить, как сильно меняется производительность и сложность написания кода.
+   1. [WSGI docs](https://wsgi.readthedocs.io/en/latest/index.html) & [Django docs: How to deploy with WSGI](https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/)
+   2. [ASGI docs](https://asgi.readthedocs.io/en/latest/) & [Django docs: How to deploy with ASGI](https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/)
 
 ...
 
