@@ -127,7 +127,11 @@ Django-приложением для динамического контента
 
 #### 2.1. Заметки по ходу выполнения
 
-...
+1. За основу, возьмем опыт с предыдущего [тестового задания](https://github.com/Suhoy95/nutnet-weather), [https://nutnet.gramend.ru/](https://nutnet.gramend.ru/).
+Только в данном случае не требуется тщательная работа с версткой/адаптивным дизайном.
+2. Журнал: [frontend-log.md](frontend-log.md)
+3. Во время отладки, если Frontend & Django находятся на разных серверах, 
+удобно прописать CORS в дополнении к [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cross-domain-cors/)
 
 ### 3. Deploy / Docker (Дедлайн - Четверг 16.09 15:00)
 
