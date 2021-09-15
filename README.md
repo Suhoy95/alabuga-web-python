@@ -104,6 +104,15 @@ Django-приложением для динамического контента
 9. [Руководство по Шаблонам](https://docs.djangoproject.com/en/3.2/topics/templates/)
 10. Полезно знать про [`F()` - для избегания гонок](https://docs.djangoproject.com/en/3.2/ref/models/expressions/#f-expressions)
 
+**REST_FRAMEWORK**
+
+1. Стандартное решение полностью подходит для реализации `resources/`:
+   1. [`ModelViewSet`](https://www.django-rest-framework.org/api-guide/viewsets/#modelviewset) описывает стандартные действия по работе с БД методами `.list()`, `.retrieve()`, `.create()`, 
+   `.update()`, `.partial_update()`, и `.destroy()`.
+   2. [`SimpleRouter`](https://www.django-rest-framework.org/api-guide/routers/#simplerouter)
+   создает CRUD URL-схему, сопоставляя ихз с методами `ModelViewSet`
+   3. Проверить CRUD API можно с помощью `curl`. Смотри скрипты в [`manual-tests/`](manual-tests/)
+
 ### 2. Frontend: ReactJS + Ant (Дедлайн - Среда 15.09)
 
 Поскольку в плане дизайна нет определенных требований, постараемся просто сделать
