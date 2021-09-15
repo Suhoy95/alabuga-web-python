@@ -28,7 +28,8 @@ const WhHeader = withRouter(({ location }) => {
                     <span>Товары</span>
                     <Link to="/resources" />
                 </Menu.Item>
-                <Menu.Item key="/supply">
+                {/* Представления для Заведение и отгрузки товара */}
+                {/* <Menu.Item key="/supply">
                     <DownloadOutlined style={{ fontSize: iconSize }} />
                     <span>Завести товар</span>
                     <Link to="/supply" />
@@ -37,7 +38,7 @@ const WhHeader = withRouter(({ location }) => {
                     <ExportOutlined style={{ fontSize: iconSize }} />
                     <span>Отгрузить товар</span>
                     <Link to="/ship" />
-                </Menu.Item>
+                </Menu.Item> */}
             </Menu>
         </Header>
     );
