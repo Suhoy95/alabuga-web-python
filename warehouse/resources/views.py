@@ -26,7 +26,7 @@ def total_cost(request):
         "total": 0,
         "resources": [],
     }
-    for resource in WarehouseResource.objects.all():
+    for resource in WarehouseResource.objects.all().order_by('name'):
         totalCost["total"] += resource.total_cost
         totalCost["resources"].append({
             "id": resource.id,
