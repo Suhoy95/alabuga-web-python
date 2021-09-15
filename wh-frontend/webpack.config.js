@@ -4,7 +4,7 @@ const webpack = require("webpack");
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  entry: [ "./src/index.jsx"],
+  entry: ["babel-polyfill", "./src/index.jsx"],
   output: {
     path: path.join(path.resolve(__dirname), "dist"),
     filename: "bundle.js",
@@ -15,12 +15,7 @@ module.exports = {
       exclude: /node_modules/,
       use: {
         loader: "babel-loader",
-        options: {
-          presets: [
-            "@babel/preset-env",
-            "@babel/react",
-          ],
-        }
+        options: require("./.babelrc"),
       }
     }, {
       test: /\.css$/,

@@ -8,9 +8,7 @@ const { Content, Footer } = Layout;
 
 import WhHeader from "./WhHeader"
 import TotalCostView from "./TotalCostView"
-
-const ResourcesView = () => (<h1>Resources</h1>)
-
+import ResourcesView from "./ResourcesView"
 
 ReactDOM.render(
     <Router>
