@@ -1,43 +1,31 @@
 import React from "react"
 
-import { PageHeader, Divider, Table } from "antd"
+import { PageHeader, Divider, Table, Space, Button } from "antd"
+import {
+    EditOutlined,
+    DeleteOutlined,
+} from '@ant-design/icons';
 import reqwest from "reqwest"
 
 import CreateResourceModal from "./CreateResourceModal"
+import reqwestHeaders from "./reqwest-headers";
 
-const columns = [
-    {
-        title: "Название товара",
-        dataIndex: "name",
-        key: "name",
-    },
-    {
-        title: "Количество",
-        dataIndex: "quantity",
-        key: "quantity",
-        align: "center",
-        render: (q, res) => `${q} ${res.measure_unit}`,
-    },
-    {
-        title: "Цена",
-        dataIndex: "cost",
-        key: "cost",
-        align: "center",
-    },
-    {
-        title: "Общая стоимость",
-        key: "total",
-        render: (resource) => resource.cost * resource.quantity,
-        align: "center",
-    },
-    {
-        title: "Дата последней Поставки/Отгрузки",
-        dataIndex: "last_update",
-        key: "last_update",
-        align: "center",
-        render: (dateString) => (new Date(dateString)).toLocaleString(),
-    },
-]
+const DeleteButton = ({id, onDelete}) => {
+    
+    const onClick = () => {
+        reqwest({
+            url: `/resources/${id}/`,
+            method: 'delete',
+            headers: reqwestHeaders(),
+        }).then(()=> {
+            onDelete();
+        })
+    };
+    
+    return (
+        <Button onClick={onClick}><DeleteOutlined /></Button>
+    );
+};
 
 class ResourcesView extends React.Component {
 
@@ -52,6 +40,51 @@ class ResourcesView extends React.Component {
                 total: 0,
             }
         }
+
+        this.refresh = this.refresh.bind(this);
+
+        this.columns = [
+            {
+                title: "Название товара",
+                dataIndex: "name",
+                key: "name",
+            },
+            {
+                title: "Количество",
+                dataIndex: "quantity",
+                key: "quantity",
+                align: "center",
+                render: (q, res) => `${q} ${res.measure_unit}`,
+            },
+            {
+                title: "Цена",
+                dataIndex: "cost",
+                key: "cost",
+                align: "center",
+            },
+            {
+                title: "Общая стоимость",
+                key: "total",
+                render: (resource) => resource.cost * resource.quantity,
+                align: "center",
+            },
+            {
+                title: "Дата последней Поставки/Отгрузки",
+                dataIndex: "last_update",
+                key: "last_update",
+                align: "center",
+                render: (dateString) => (new Date(dateString)).toLocaleString(),
+            },
+            {
+                title: "",
+                key: "actions",
+                align: "center",
+                render: (res) => (<Space>
+                    <Button><EditOutlined /></Button>
+                   <DeleteButton id={res.id} onDelete={this.refresh} />
+                </Space>),
+            }
+        ];
     }
 
     componentDidMount() {
@@ -61,12 +94,12 @@ class ResourcesView extends React.Component {
 
     handleTableChange = (pagination, filters, sorter) => {
         this.fetch({pagination});
-      };
+    };
 
     fetch(params = {pagination: {}}) {
         this.setState({loading: true});
         reqwest({
-            url: 'http://localhost:8000/resources/',
+            url: '/resources/',
             method: 'get',
             type: 'json',
             data: {
@@ -85,6 +118,10 @@ class ResourcesView extends React.Component {
         })
     }
 
+    refresh() {
+        this.fetch({pagination: this.state.pagination});
+    }
+
     render() {
         const {results, pagination, loading } = this.state;
         return (
@@ -94,12 +131,12 @@ class ResourcesView extends React.Component {
                     subTitle={`Всего товаров: ${pagination.total}`}
                 />
                 <Divider />
-                <CreateResourceModal onCreate={() => this.fetch({pagination:pagination})}/>
+                <CreateResourceModal onCreate={this.refresh}/>
                 <Divider />
                 <Table
                     dataSource={results}
                     rowKey={resource => resource.id}
-                    columns={columns}
+                    columns={this.columns}
                     loading={loading}
                     pagination={pagination}
                     onChange={this.handleTableChange}

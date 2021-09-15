@@ -30,7 +30,7 @@ class TotalCostView extends React.Component {
     componentDidMount() {
         this.setState({loading: true});
         reqwest({
-            url: 'http://localhost:8000/total-cost/',
+            url: '/total-cost/',
             method: 'get',
             type: 'json',
         }).then(data => {

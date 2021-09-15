@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, Button, Form, Input, InputNumber, Radio } from 'antd';
 import reqwest from "reqwest";
+import reqwestHeaders from "./reqwest-headers";
 
 const CreateForm = ({ visible, loading, onCreate, onCancel }) => {
     const [form] = Form.useForm();
@@ -106,9 +107,10 @@ export default class CreateResourceModal extends React.Component {
         this.setState({ loading: true });
         console.log(values);
         reqwest({
-            url: 'http://localhost:8000/resources/',
+            url: '/resources/',
             method: 'post',
             type: 'json',
+            headers: reqwestHeaders(),
             data: values,
         }).then((data) => {
             this.props.onCreate();
