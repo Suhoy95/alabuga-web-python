@@ -8,6 +8,7 @@ import {
 import reqwest from "reqwest"
 
 import CreateResourceModal from "./CreateResourceModal"
+import EditResourceModal from "./EditResourceModal";
 import reqwestHeaders from "./reqwest-headers";
 
 const DeleteButton = ({id, onDelete}) => {
@@ -80,8 +81,8 @@ class ResourcesView extends React.Component {
                 key: "actions",
                 align: "center",
                 render: (res) => (<Space>
-                    <Button><EditOutlined /></Button>
-                   <DeleteButton id={res.id} onDelete={this.refresh} />
+                    <EditResourceModal resource={res} onEdit={this.refresh} />
+                    <DeleteButton id={res.id} onDelete={this.refresh} />
                 </Space>),
             }
         ];

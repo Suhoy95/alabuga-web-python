@@ -15,7 +15,7 @@ const WhHeader = withRouter(({ location }) => {
     const iconSize = '24px';
     return (
         <Header>
-            <Menu mode="horizontal"
+            <Menu theme="dark" mode="horizontal"
                 defaultSelectedKeys={['/']}
                 selectedKeys={[location.pathname]}>
                 <Menu.Item key="/">
@@ -35,7 +35,7 @@ const WhHeader = withRouter(({ location }) => {
                 </Menu.Item>
                 <Menu.Item key="/ship">
                     <ExportOutlined style={{ fontSize: iconSize }} />
-                    Отгрузить товар
+                    <span>Отгрузить товар</span>
                     <Link to="/ship" />
                 </Menu.Item>
             </Menu>
