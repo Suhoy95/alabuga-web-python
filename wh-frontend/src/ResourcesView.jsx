@@ -3,6 +3,8 @@ import React from "react"
 import { PageHeader, Divider, Table } from "antd"
 import reqwest from "reqwest"
 
+import CreateResourceModal from "./CreateResourceModal"
+
 const columns = [
     {
         title: "Название товара",
@@ -91,6 +93,8 @@ class ResourcesView extends React.Component {
                     title="Товары на складе"
                     subTitle={`Всего товаров: ${pagination.total}`}
                 />
+                <Divider />
+                <CreateResourceModal onCreate={() => this.fetch({pagination:pagination})}/>
                 <Divider />
                 <Table
                     dataSource={results}

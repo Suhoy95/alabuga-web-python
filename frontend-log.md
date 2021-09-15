@@ -23,3 +23,8 @@ npm install --save-dev webpack webpack-cli \
 ## Создание Таблиц со страницами
 
 - https://ant.design/components/table/#components-table-demo-ajax
+
+## Создание модальных окон и форм
+
+- https://ant.design/components/modal/#components-modal-demo-footer
+- https://ant.design/components/form/#components-form-demo-form-in-modal
