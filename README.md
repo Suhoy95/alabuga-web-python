@@ -112,6 +112,7 @@ Django-приложением для динамического контента
    2. [`SimpleRouter`](https://www.django-rest-framework.org/api-guide/routers/#simplerouter)
    создает CRUD URL-схему, сопоставляя ихз с методами `ModelViewSet`
    3. Проверить CRUD API можно с помощью `curl`. Смотри скрипты в [`manual-tests/`](manual-tests/)
+2. Для `total-cost/` напишем простую функцию, обернутую в [api_view() декоратор](https://www.django-rest-framework.org/api-guide/views/#function-based-views)
 
 ### 2. Frontend: ReactJS + Ant (Дедлайн - Среда 15.09)
 
