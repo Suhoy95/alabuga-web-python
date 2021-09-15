@@ -4,12 +4,11 @@ import { HashRouter as Router, Route } from "react-router-dom"
 
 import "antd/dist/antd.css"
 import { Layout } from "antd"
-
-import WhHeader from "./WhHeader"
-
 const { Content, Footer } = Layout;
 
-const MainView = () => (<h1>Total cost</h1>)
+import WhHeader from "./WhHeader"
+import TotalCostView from "./TotalCostView"
+
 const ResourcesView = () => (<h1>Resources</h1>)
 
 
@@ -17,8 +16,8 @@ ReactDOM.render(
     <Router>
         <Layout>
             <WhHeader />
-            <Content>
-                <Route exact path="/" component={MainView} />
+            <Content style={{ padding: ' 0 50px' }}>
+                <Route exact path="/" component={TotalCostView} />
                 <Route path="/resources" component={ResourcesView} />
             </Content>
             <Footer>
