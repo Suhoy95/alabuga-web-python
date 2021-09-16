@@ -60,7 +60,7 @@ echo cd $TARTGET_DIR/warehouse
 echo python manage.py migrate
 echo "python manage.py createsuperuser"
 echo "python manage.py collectstatic"
-vim ../secret_key.txt # (если нет)
+vim secret_key.txt # (если нет)
 exit -1
 
 cat > dist/uwsgi.ini <<EOF
