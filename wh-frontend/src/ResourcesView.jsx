@@ -19,7 +19,12 @@ const DeleteButton = ({ id, onDelete }) => {
       headers: XCSRFHeaders(),
     }).then(() => {
       onDelete();
-    })
+    }).fail((err, msg) => {
+      if (err.status == 401 || err.status == 403) {
+        window.location.replace(`/api-auth/login/?next=${encodeURI(window.location.pathname)}`)
+      }
+      console.log(err, msg);
+    });
   };
 
   return (
@@ -114,7 +119,12 @@ class ResourcesView extends React.Component {
           ...params.pagination,
           total: data.count,
         }
-      })
+      }).fail((err, msg) => {
+        if (err.status == 403) {
+          window.location.replace(`/api-auth/login/?next=${encodeURI(window.location.pathname)}`)
+        }
+        console.log(err, msg);
+      });
     })
   }
 

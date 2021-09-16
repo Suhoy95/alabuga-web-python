@@ -6,7 +6,8 @@ import {
   BankOutlined,
   AppstoreOutlined,
   // DownloadOutlined,
-  // ExportOutlined
+  // ExportOutlined,
+  LogoutOutlined,
 } from '@ant-design/icons';
 
 const { Header } = Layout;
@@ -39,6 +40,11 @@ const WhHeader = withRouter(({ location }) => {
           <span>Отгрузить товар</span>
           <Link to="/ship" />
         </Menu.Item> */}
+        <Menu.Item>
+          <LogoutOutlined style={{fontSize: iconSize}} />
+          <span>Выйти из системы</span>
+          <a href={`/api-auth/logout/?next=${encodeURI("/api-auth/login/")}`} />
+        </Menu.Item>
       </Menu>
     </Header>
   );

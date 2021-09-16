@@ -150,8 +150,11 @@ Django+uWSGI+Nginx. А также создадим Docker-образ для ра
    2. [ASGI docs](https://asgi.readthedocs.io/en/latest/) & [Django docs: How to deploy with ASGI](https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/)
 2. Для начала оформим проект, чтобы его было удобно собрать и запустить из 
 [GitHub](https://github.com/elsewhencode/project-guidelines/blob/master/README.sample.md), чтобы другие программисты могли присоединится к работе.
-
-...
+3. В данный момент `Docker` не захотел устанавливаться на компьютер:
+![Не удалось установить докер](./images/docker-installation-failed.png)
+4. Чтобы развернуть рабочий вариант на классическом VDS, понадобилось срочно 
+добавить к API [Аутентификацию](https://www.django-rest-framework.org/api-guide/authentication/) и [Авторизацию](https://www.django-rest-framework.org/api-guide/permissions/).
+5. Времени осталось мало, но все же попробуем развернуть наше Django-приложение на VSD
 
 ### 4. Maintenance / Вспомогательные инструменты
 
