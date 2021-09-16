@@ -20,8 +20,19 @@ npm --version
 > 6.13.4
 ```
 
-Установить все зависимости, и собрать React-Frontend можно с помощью скрипта:
+Установить все зависимости, и собрать React-Frontend можно с помощью скрипта (Также полезно его изучить, для понимания структуры проекта):
 
 ```bash
 ./build.sh
+```
+
+Создаем супер-пользователя и заполняем Базу данных тестовыми данными (если необходимо):
+
+```bash
+.\venv\Scripts\activate # или source ./venv/bin/activate
+cd warehouse
+python manage.py createsuperuser
+
+# Заполнить БД тестовыми товарами
+python fillTestData.py
 ```

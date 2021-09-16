@@ -7,8 +7,6 @@ if [[ "$1" == "--help" ]]; then
     exit 0
 fi
 
-set -ex
-
 if [[ "$1" == "freeze" ]]; then
     if [ ! -d "venv" ]; then 
         echo "Виртуально окружение (venv) не установлено!"
@@ -20,6 +18,29 @@ if [[ "$1" == "freeze" ]]; then
 fi
 
 if [[ "$1" == "clean" ]]; then
-    echo "clean"
+    git clean -xnfd
+    echo "Вы уверены?"
+    read
+    git clean -xfd
     exit 0
 fi
+
+set -x
+
+# Установка Python-окружения и библиотек в Виртуальное окружение
+python -m venv venv
+source venv/bin/activate || source venv/Scripts/activate
+pip install -r requirements.txt
+
+# Инициализация Базы Данных
+pushd warehouse
+python manage.py migrate
+popd
+
+# Установка Node.js пакетов
+pushd wh-frontend
+npm install
+
+# Сборка React-frontend в wh-frontend/dist/
+npm run publish
+popd
