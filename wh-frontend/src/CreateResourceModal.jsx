@@ -118,6 +118,11 @@ export default class CreateResourceModal extends React.Component {
     }).then((data) => {
       this.props.onCreate();
       this.setState({ loading: false, visible: false });
+    }).fail((err, msg) => {
+      if (err.status == 401 || err.status == 403) {
+        window.location.replace(`/api-auth/login/?next=${encodeURI(window.location.pathname)}`)
+      }
+      console.log(err, msg);
     });
   };
 

@@ -36,7 +36,12 @@ class TotalCostView extends React.Component {
     }).then(data => {
       this.setState({ loading: false })
       this.setState(data)
-    })
+    }).fail((err, msg) => {
+      if (err.status == 401 || err.status == 403) {
+        window.location.replace(`/api-auth/login/?next=${encodeURI(window.location.pathname)}`)
+      }
+      console.log(err, msg);
+    });
   }
 
   render() {
