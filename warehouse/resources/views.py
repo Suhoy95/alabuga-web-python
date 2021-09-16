@@ -20,11 +20,13 @@ class WhResourcesViewSet(viewsets.ModelViewSet):
     serializer_class = WhResourceSerializer
     authentication_classes =[authentication.SessionAuthentication]
     permission_classes = [permissions.IsAuthenticated, permissions.DjangoModelPermissions]
+    # permission_classes = [permissions.AllowAny]
 
 
 @api_view()
 @authentication_classes([authentication.SessionAuthentication])
 @permission_classes([permissions.IsAuthenticated])
+# @permission_classes([permissions.AllowAny])
 def total_cost(request):
     totalCost = {
         "total": 0,

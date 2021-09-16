@@ -44,10 +44,19 @@ cd warehouse
 python manage.py runserver
 ```
 
-Тестирование: 
+В целях безопасной работы, рекомендуется зайти администратором. Сделать группу
+с разрешениями на изменение только товаров:
 
-- http://127.0.0.1:8000/fe/index.html#/ - React+Ant фронденд
+![](./Documentation/images/warehouse-operators.png)
+
+И создать обычного пользователя для работы со складом:
+
+![](./Documentation/images/vasya-operator.png)
+
+Тестирование:
+
+- http://127.0.0.1:8000/fe/index.html#/ - React+Ant фронденд (С перенаправлением на Django REST login API)
 - http://127.0.0.1:8000/resources/ - работа с REST API товаров
 - http://127.0.0.1:8000/total-cost/ - API для получения итоговой сметы по товарам на складе.
 - http://127.0.0.1:8000/admin/login/ - Django-админка
-- [./manual-tests/](./manual-tests/) - примеры curl-запросов для тестирования API
+- [./manual-tests/](./manual-tests/) - примеры curl-запросов для тестирования API. Для их тестирования стоит **ВРЕМЕННО** выключить Авторизацию в [`./warehouse/resources/views.py`](./warehouse/resources/views.py), вернув строчки с `permissions.AllowAny`.
