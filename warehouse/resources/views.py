@@ -3,11 +3,13 @@ from django.shortcuts import render
 from rest_framework import (
     viewsets,
     permissions,
-    response
+    authentication,
+    response,
 )
 from rest_framework.decorators import (
     api_view,
     permission_classes,
+    authentication_classes
 )
 
 from .models import WarehouseResource
@@ -16,11 +18,13 @@ from .serializers import WhResourceSerializer
 class WhResourcesViewSet(viewsets.ModelViewSet):
     queryset = WarehouseResource.objects.all().order_by('name')
     serializer_class = WhResourceSerializer
-    permission_classes = [permissions.AllowAny]
+    authentication_classes =[authentication.SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated, permissions.DjangoModelPermissions]
 
 
 @api_view()
-@permission_classes([permissions.AllowAny])
+@authentication_classes([authentication.SessionAuthentication])
+@permission_classes([permissions.IsAuthenticated])
 def total_cost(request):
     totalCost = {
         "total": 0,
