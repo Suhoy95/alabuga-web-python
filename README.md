@@ -36,3 +36,18 @@ python manage.py createsuperuser
 # Заполнить БД тестовыми товарами
 python fillTestData.py
 ```
+
+Последним шагом, можно запустить тестовый сервер:
+```
+.\venv\Scripts\activate # или source ./venv/bin/activate
+cd warehouse
+python manage.py runserver
+```
+
+Тестирование: 
+
+- http://127.0.0.1:8000/fe/index.html#/ - React+Ant фронденд
+- http://127.0.0.1:8000/resources/ - работа с REST API товаров
+- http://127.0.0.1:8000/total-cost/ - API для получения итоговой сметы по товарам на складе.
+- http://127.0.0.1:8000/admin/login/ - Django-админка
+- [./manual-tests/](./manual-tests/) - примеры curl-запросов для тестирования API
